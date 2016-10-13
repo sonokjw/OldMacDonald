@@ -1,13 +1,17 @@
 class NamedCow extends Cow
 {
-	private String [] cowNames = {"Bob", "Tammi", "Sam", "Tom", "Sal", "Sue", "Tim", "Ana"};
+	private String myType;
+	private String mySound;
 	private String cowName;
-	private int myNum;
-
+	NamedCow(String type, String name, String sound)
+	{
+		myType = type;
+		cowName = name;
+		mySound = sound;
+	}
+	
 	public String getName()
 	{
-		myNum = (int)(Math.random()*8);
-		return cowNames[myNum];
+		return cowName;
 	}
-
 }

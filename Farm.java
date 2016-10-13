@@ -12,13 +12,11 @@ class Farm
 
 			if(myNum == 0)
 			{
-				aBunchOfAnimals[i] = new Cow("Cow", "moo");
-				aBunchOfAnimals[i] = new NamedCow();
-				((NamedCow)aBunchOfAnimals[i]).getName();
+				aBunchOfAnimals[i] = new NamedCow("Cow", "Momo", "moo");
 			}
 			else if(myNum == 1)
 			{
-				aBunchOfAnimals[i] = new Chick("Chick", "cluck");
+				aBunchOfAnimals[i] = new Chick("Chick", "cheep", "cluck");
 			}
 			else
 			{
@@ -28,7 +26,15 @@ class Farm
 	}
 	public void animalSounds()    {       
     	for (int nI=0; nI < aBunchOfAnimals.length; nI++)       {          
-       		System.out.println( aBunchOfAnimals[nI].getType() + " goes " + aBunchOfAnimals[nI].getSound());       
+       		if( aBunchOfAnimals[nI] instanceof Cow)
+       		{
+
+       			System.out.println( aBunchOfAnimals[nI].getType() + " " + ((NamedCow)aBunchOfAnimals[nI]).getName() + " goes " + aBunchOfAnimals[nI].getSound());
+       		}
+
+    		else {
+    			System.out.println( aBunchOfAnimals[nI].getType() + " goes " + aBunchOfAnimals[nI].getSound());	
+    		}       
       	}    
     } 
 }
